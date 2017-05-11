@@ -4,7 +4,7 @@ var sentence = prompt("Enter a sentence:");
 var firstletter = sentence.charAt(0).toUpperCase();
 var lastletter = sentence.charAt(sentence.length-1).toUpperCase();
 
-var res = function(letter1, letter2) {
+var firstAndLastletter = function(letter1, letter2) {
   return firstletter + lastletter;
 };
 
@@ -13,14 +13,34 @@ var reverse = function(letter1, letter2) {
 };
 
 var thirdFunction = function(letter1, letter2) {
-  return reverse(res(firstletter, lastletter));
+  return reverse(firstAndLastletter(firstletter, lastletter));
 };
 thirdFunction(firstletter, lastletter);
 
 var result = thirdFunction(firstletter, lastletter);
 var outputText = sentence + " " + result;
 alert(outputText);
+
 var count = function(sentence) {
-  alert(sentence.length/2);
+   return(sentence.length/2);
 };
 count(sentence);
+
+var midLetter = sentence.charAt(count(sentence));
+
+alert(midLetter+outputText);
+
+var finalString= midLetter + outputText;
+
+function reverseSentence(paragraph){
+
+  var splitString=paragraph.split("");
+
+  var reverseArray = splitString.reverse();
+
+  var joinArray = reverseArray.join("");
+
+  return joinArray;
+}
+
+alert (reverseSentence(finalString));
